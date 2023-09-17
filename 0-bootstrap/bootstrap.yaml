@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-single-cluster
+  name: bootstrap-sepe-gitops-demo-cluster
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: 0-bootstrap/single-cluster
+    path: 0-bootstrap/sepe-gitops-demo-cluster
     repoURL: https://github.com/sepe-gitops/multi-tenancy-gitops.git
     targetRevision: test
   syncPolicy:
