@@ -69,7 +69,7 @@ resources:
 #- argocd/instances/ibm-license-service-instance.yaml
 
 ## IBM Catalogs
-# - argocd/operators/ibm-catalogs.yaml
+- argocd/operators/ibm-catalogs.yaml
 
 # PAW
 #- argocd/instances/ibm-paw.yaml
@@ -156,7 +156,7 @@ patches:
       value: https://github.com/sepe-gitops/multi-tenancy-gitops-services.git
     - op: add
       path: /spec/source/targetRevision
-      value: master
+      value: test
 - target:
     group: argoproj.io
     kind: Application
