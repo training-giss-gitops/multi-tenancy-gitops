@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps-SEPE-dev
+  name: apps-sepe-dev
   annotations:
     argocd.argoproj.io/sync-wave: "300"
   labels:
