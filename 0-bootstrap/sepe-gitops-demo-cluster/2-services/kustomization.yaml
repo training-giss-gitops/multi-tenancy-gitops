@@ -71,6 +71,9 @@ resources:
 ## IBM Catalogs
 - argocd/operators/ibm-catalogs.yaml
 
+## App Mod
+- argocd/operators/ibm-websphere-liberty-operator.yaml
+
 # PAW
 #- argocd/instances/ibm-paw.yaml
 
