@@ -8,10 +8,6 @@ metadata:
 spec:
   sourceRepos: []  # Populated by kustomize patches in 3-apps/kustomization.yaml
   destinations:
-  - namespace: ace-jenkins
-    server: https://kubernetes.default.svc
-  - namespace: ace-tekton
-    server: https://kubernetes.default.svc
   - namespace: ci
     server: https://kubernetes.default.svc
   - namespace: dev

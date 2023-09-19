@@ -30,10 +30,14 @@ resources:
 
 #- argocd/cp4a/cp4a.yaml
 
-- argocd/eci/ci.yaml
-- argocd/eci/tools.yaml
-- argocd/eci/ace-tekton.yaml
-- argocd/eci/ace-jenkins.yaml
+# - argocd/eci/ci.yaml
+# - argocd/eci/tools.yaml
+# - argocd/eci/ace-tekton.yaml
+# - argocd/eci/ace-jenkins.yaml
+
+- argocd/SEPE/dev.yaml
+# - argocd/SEPE/staging.yaml
+# - argocd/SEPE/prod.yaml
 
 patches:
 - target:
