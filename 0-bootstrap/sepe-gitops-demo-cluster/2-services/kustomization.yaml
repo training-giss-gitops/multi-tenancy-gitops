@@ -69,10 +69,10 @@ resources:
 #- argocd/instances/ibm-license-service-instance.yaml
 
 ## IBM Catalogs
-- argocd/operators/ibm-catalogs.yaml
+# - argocd/operators/ibm-catalogs.yaml
 
 ## App Mod
-- argocd/operators/ibm-websphere-liberty-operator.yaml
+# - argocd/operators/ibm-websphere-liberty-operator.yaml
 
 # PAW
 #- argocd/instances/ibm-paw.yaml
