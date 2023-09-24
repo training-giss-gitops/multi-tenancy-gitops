@@ -187,3 +187,6 @@ patches:
       value:
         name: spec.channel
         value: v1.1
+
+commonAnnotations:
+  configVersion: "4.0"
