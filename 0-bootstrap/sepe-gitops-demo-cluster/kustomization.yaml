@@ -67,3 +67,6 @@ patches:
     - op: replace
       path: /spec/destination/namespace
       value: openshift-gitops
+
+commonAnnotations:
+  configVersion: "3.0"

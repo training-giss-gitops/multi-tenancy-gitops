@@ -10,7 +10,7 @@ resources:
 #- argocd/namespace-cloudpak.yaml
 #- argocd/namespace-istio-system.yaml
 #- argocd/namespace-openldap.yaml
-#- argocd/namespace-sealed-secrets.yaml
+- argocd/namespace-sealed-secrets.yaml
 #- argocd/namespace-tools.yaml
 #- argocd/namespace-instana-agent.yaml
 #- argocd/namespace-robot-shop.yaml
