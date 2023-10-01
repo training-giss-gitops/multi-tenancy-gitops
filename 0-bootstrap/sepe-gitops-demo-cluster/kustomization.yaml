@@ -62,7 +62,7 @@ patches:
       value: https://github.com/sepe-gitops/multi-tenancy-gitops-apps.git
     - op: add
       path: /spec/sourceRepos/-
-      value: https://helm.github.io/examples
+      value: https://jesusmah.github.io/helm-chart-repo
 - target:
     group: argoproj.io
     kind: Application
