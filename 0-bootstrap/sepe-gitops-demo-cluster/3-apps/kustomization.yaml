@@ -35,7 +35,7 @@ resources:
 # - argocd/eci/ace-tekton.yaml
 # - argocd/eci/ace-jenkins.yaml
 
-- argocd/SEPE/helm.yaml
+# - argocd/SEPE/helm.yaml
 - argocd/SEPE/dev.yaml
 # - argocd/SEPE/staging.yaml
 - argocd/SEPE/prod.yaml
