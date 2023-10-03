@@ -39,7 +39,7 @@ resources:
 # - argocd/SEPE/staging.yaml
 # - argocd/SEPE/prod.yaml
 
-# - argocd/GISS/dev.yaml
+- argocd/GISS/dev.yaml
 
 patches:
 - target:
