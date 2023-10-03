@@ -11,7 +11,7 @@ spec:
   source:
     path: 0-bootstrap/single-cluster
     repoURL: https://github.com/sepe-gitops/multi-tenancy-gitops.git
-    targetRevision: test
+    targetRevision: new-version
   syncPolicy:
     automated:
       prune: true

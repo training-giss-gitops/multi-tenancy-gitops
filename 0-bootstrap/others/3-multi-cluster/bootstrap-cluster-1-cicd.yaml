@@ -11,7 +11,7 @@ spec:
   source:
     path: 0-bootstrap/others/3-multi-cluster/cluster-1-cicd
     repoURL: https://github.com/sepe-gitops/multi-tenancy-gitops.git
-    targetRevision: test
+    targetRevision: new-version
   syncPolicy:
     automated:
       prune: true
