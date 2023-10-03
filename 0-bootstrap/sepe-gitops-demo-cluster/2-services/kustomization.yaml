@@ -159,7 +159,7 @@ patches:
       value: https://github.com/sepe-gitops/multi-tenancy-gitops-services.git
     - op: add
       path: /spec/source/targetRevision
-      value: test
+      value: new-version
 - target:
     group: argoproj.io
     kind: Application
