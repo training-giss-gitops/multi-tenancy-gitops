@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: 0-bootstrap/others/2-isolated-cluster/cluster-1-cicd-dev-stage
-    repoURL: https://github.com/sepe-gitops/multi-tenancy-gitops.git
+    repoURL: https://github.com/giss-gitops/multi-tenancy-gitops.git
     targetRevision: master
   syncPolicy:
     automated:
