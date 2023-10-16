@@ -52,4 +52,4 @@ patches:
       value: https://github.com/sepe-gitops/multi-tenancy-gitops-apps.git
     - op: add
       path: /spec/source/targetRevision
-      value: new-version
+      value: master

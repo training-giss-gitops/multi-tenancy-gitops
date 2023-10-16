@@ -11,7 +11,7 @@ spec:
   source:
     path: 0-bootstrap/others/1-shared-cluster/cluster-n-prod
     repoURL: https://github.com/sepe-gitops/multi-tenancy-gitops.git
-    targetRevision: new-version
+    targetRevision: master
   syncPolicy:
     automated:
       prune: true

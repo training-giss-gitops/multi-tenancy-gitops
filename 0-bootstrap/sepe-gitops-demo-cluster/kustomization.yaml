@@ -13,7 +13,7 @@ patches:
       value: https://github.com/sepe-gitops/multi-tenancy-gitops.git
     - op: add
       path: /spec/source/targetRevision
-      value: new-version
+      value: master
 - target:
     group: argoproj.io
     kind: AppProject
