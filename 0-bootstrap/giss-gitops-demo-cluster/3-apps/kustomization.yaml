@@ -1,0 +1,51 @@
+resources:
+#- argocd/ace/cicd.yaml
+#- argocd/ace/dev.yaml
+#- argocd/ace/stage.yaml
+#- argocd/ace/prod.yaml
+
+#- argocd/mq/cicd.yaml
+#- argocd/mq/dev.yaml
+#- argocd/mq/stage.yaml
+#- argocd/mq/prod.yaml
+
+#- argocd/apic/cicd.yaml
+#- argocd/apic/dev.yaml
+#- argocd/apic/stage.yaml
+#- argocd/apic/prod.yaml
+#- argocd/apic/single-cluster-pipelines.yaml
+#- argocd/apic/single-cluster-config.yaml
+#- argocd/apic/single-cluster-cp4i.yaml
+#- argocd/apic/multi-cluster-app.yaml
+#- argocd/apic/multi-cluster-ops.yaml
+
+#- argocd/es/dev.yaml
+
+#- argocd/bookinfo/cicd.yaml
+#- argocd/bookinfo/dev.yaml
+#- argocd/bookinfo/stage.yaml
+#- argocd/bookinfo/prod.yaml
+
+#- argocd/soapserver/soapserver.yaml
+
+#- argocd/cp4a/cp4a.yaml
+
+# - argocd/eci/ci.yaml
+# - argocd/eci/tools.yaml
+# - argocd/eci/ace-tekton.yaml
+# - argocd/eci/ace-jenkins.yaml
+
+- argocd/GISS/dev.yaml
+
+patches:
+- target:
+    group: argoproj.io
+    kind: Application
+    labelSelector: "gitops.tier.layer=applications"
+  patch: |-
+    - op: add
+      path: /spec/source/repoURL
+      value: https://github.com/giss-gitops/multi-tenancy-gitops-apps.git
+    - op: add
+      path: /spec/source/targetRevision
+      value: master

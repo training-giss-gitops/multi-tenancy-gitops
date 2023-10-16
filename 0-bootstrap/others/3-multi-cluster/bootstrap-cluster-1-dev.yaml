@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: 0-bootstrap/others/3-multi-cluster/cluster-1-dev
-    repoURL: https://github.com/sepe/multi-tenancy-gitops.git
+    repoURL: https://github.com/giss-gitops/multi-tenancy-gitops.git
     targetRevision: master
   syncPolicy:
     automated:

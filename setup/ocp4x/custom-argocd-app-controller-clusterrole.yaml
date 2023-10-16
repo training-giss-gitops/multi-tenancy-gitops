@@ -414,3 +414,9 @@ rules:
       - db2u.databases.ibm.com
     resources:
       - db2uclusters
+  - verbs:
+      - '*'
+    apiGroups:
+      - liberty.websphere.ibm.com
+    resources:
+      - webspherelibertyapplications
