@@ -2,15 +2,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: infra
+  name: services
   labels:
-    gitops.tier.layer: infra
+    gitops.tier.layer: services
 spec:
-  sourceRepos: [] # Populated by kustomize patches in 1-infra/kustomization.yaml
+  sourceRepos: [] # Populated by kustomize patches in 2-services/kustomization.yaml
   destinations:
-  - namespace: ace-jenkins
+  - namespace: tools
     server: https://kubernetes.default.svc
-  - namespace: ace-tekton
+  - namespace: ibm-common-services
+    server: https://kubernetes.default.svc
+  - namespace: cloudpak
+    server: https://kubernetes.default.svc
+  - namespace: redhat-operators
+    server: https://kubernetes.default.svc
+  - namespace: openshift-operators
+    server: https://kubernetes.default.svc
+  - namespace: openshift-marketplace
     server: https://kubernetes.default.svc
   - namespace: ci
     server: https://kubernetes.default.svc
@@ -22,16 +30,6 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: sealed-secrets
     server: https://kubernetes.default.svc
-  - namespace: tools
-    server: https://kubernetes.default.svc
-  - namespace: db2
-    server: https://kubernetes.default.svc
-  - namespace: mq
-    server: https://kubernetes.default.svc
-  - namespace: ibm-common-services
-    server: https://kubernetes.default.svc
-  - namespace: cloudpak
-    server: https://kubernetes.default.svc
   - namespace: istio-system
     server: https://kubernetes.default.svc
   - namespace: openldap
@@ -42,15 +40,9 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: openshift-serverless
     server: https://kubernetes.default.svc
-  - namespace: openshift-machine-api
-    server: https://kubernetes.default.svc
-  - namespace: openshift-storage
-    server: https://kubernetes.default.svc
-  - namespace: openshift-monitoring
-    server: https://kubernetes.default.svc
-  - namespace: openshift-cluster-node-tuning-operator
-    server: https://kubernetes.default.svc
   - namespace: spp
+    server: https://kubernetes.default.svc
+  - namespace: knative-serving
     server: https://kubernetes.default.svc
   - namespace: spp-velero
     server: https://kubernetes.default.svc
@@ -58,53 +50,60 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: robot-shop
     server: https://kubernetes.default.svc
+  - namespace: db2
+    server: https://kubernetes.default.svc
+  - namespace: mq
+    server: https://kubernetes.default.svc
   - namespace: pem
     server: https://kubernetes.default.svc
   - namespace: b2bi-prod
     server: https://kubernetes.default.svc
   - namespace: b2bi-nonprod
     server: https://kubernetes.default.svc
-  - namespace: kube-system
-    server: https://kubernetes.default.svc
   - namespace: ssp
     server: https://kubernetes.default.svc
-  - namespace: openshift-image-registry
-    server: https://kubernetes.default.svc
   - namespace: sccm
-    server: https://kubernetes.default.svc
-  - namespace: odm
     server: https://kubernetes.default.svc
   - namespace: kube-system
     server: https://kubernetes.default.svc
   - namespace: cp4ba
     server: https://kubernetes.default.svc
+  - namespace: odm
+    server: https://kubernetes.default.svc
   clusterResourceWhitelist:
+  # TODO: SCC needs to be moved to 1-infra, here for now for artifactory
+  - group: "security.openshift.io"
+    kind: SecurityContextConstraints
+  - group: "console.openshift.io"
+    kind: ConsoleLink
+  - group: "apps"
+    kind: statefulsets
+  - group: "apps"
+    kind: deployments
   - group: ""
-    kind: Namespace
+    kind: services
+  - group: ""
+    kind: configmaps
+  - group: ""
+    kind: secrets
+  - group: ""
+    kind: serviceaccounts
+  - group: "batch"
+    kind: jobs
+  - group: ""
+    kind: roles
+  - group: "route.openshift.io"
+    kind: routes
   - group: ""
     kind: RoleBinding
   - group: "rbac.authorization.k8s.io"
-    kind: ClusterRole
-  - group: "rbac.authorization.k8s.io"
     kind: ClusterRoleBinding
-  - group: "security.openshift.io"
-    kind: SecurityContextConstraints
-  - group: policy
-    kind: PodSecurityPolicy
-  - group: "console.openshift.io"
-    kind: ConsoleNotification
-  - group: "console.openshift.io"
-    kind: ConsoleLink
-  - group: "machine.openshift.io"
-    kind: MachineSet
-  - group: "machineconfiguration.openshift.io"
-    kind: MachineConfigPool
-  - group: "machineconfiguration.openshift.io"
-    kind: ContainerRuntimeConfig
-  - group: "tuned.openshift.io"
-    kind: Tuned
-  - group: "batch"
-    kind: Job
+  - group: "rbac.authorization.k8s.io"
+    kind: ClusterRole
+  - group: apiextensions.k8s.io
+    kind: CustomResourceDefinition
+  - group: ""
+    kind: PersistentVolume
   roles:
   # A role which provides read-only access to all applications in the project
   - name: read-only
@@ -117,19 +116,20 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra
+  name: services
   annotations:
-    argocd.argoproj.io/sync-wave: "100"
+    argocd.argoproj.io/sync-wave: "200"
   labels:
     gitops.tier.layer: gitops
 spec:
   destination:
     namespace: openshift-gitops
     server: https://kubernetes.default.svc
-  project: infra
-  source: # repoURL  and targetRevision populated by kustomize patches in 1-infra/kustomization.yaml
-    path: 0-bootstrap/sepe-gitops-demo-cluster/1-infra
+  project: services
+  source: # repoURL  and targetRevision populated by kustomize patches in 2-services/kustomization.yaml
+    path: 0-bootstrap/giss-gitops-demo-cluster/2-services
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+
