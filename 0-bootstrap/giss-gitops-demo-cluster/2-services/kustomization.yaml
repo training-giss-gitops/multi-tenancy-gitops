@@ -11,7 +11,7 @@ resources:
 #- argocd/operators/ibm-assetrepository-operator.yaml
 #- argocd/operators/ibm-cp4i-operators.yaml
 #- argocd/operators/ibm-datapower-operator.yaml
-#- argocd/operators/ibm-eventstreams-operator.yaml
+- argocd/operators/ibm-eventstreams-operator.yaml
 #- argocd/instances/ibm-eventstreams-instance.yaml
 #- argocd/operators/ibm-mq-operator.yaml
 #- argocd/operators/ibm-opsdashboard-operator.yaml
@@ -69,7 +69,7 @@ resources:
 #- argocd/instances/ibm-license-service-instance.yaml
 
 ## IBM Catalogs
-# - argocd/operators/ibm-catalogs.yaml
+- argocd/operators/ibm-catalogs.yaml
 
 ## App Mod
 # - argocd/operators/ibm-websphere-liberty-operator.yaml
