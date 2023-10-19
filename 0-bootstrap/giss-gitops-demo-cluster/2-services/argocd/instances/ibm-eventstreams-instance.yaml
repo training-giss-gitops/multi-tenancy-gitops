@@ -53,6 +53,12 @@ spec:
                       port: 9092
                       type: internal
                       tls: false
+                    - name: external
+                      port: 9094
+                      type: route
+                      authentication:
+                        type: scram-sha-512
+                      tls: true
                   storage:
                     type: ephemeral
                   metricsConfig:
