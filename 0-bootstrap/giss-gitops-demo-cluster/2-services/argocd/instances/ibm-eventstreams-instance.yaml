@@ -25,7 +25,7 @@ spec:
       values: |
         ibm-eventstreams-instance:
           ibmeventstreamsinstance:
-            name: eventstreams-default
+            name: es-default
             spec:
               version: latest
               license:
@@ -73,7 +73,7 @@ spec:
                     valueFrom:
                       configMapKeyRef:
                         key: kafka-metrics-config.yaml
-                        name: eventstreams-default-metrics-config
+                        name: es-default-metrics-config
                 zookeeper:
                   replicas: 1
                   metricsConfig:
@@ -81,7 +81,7 @@ spec:
                     valueFrom:
                       configMapKeyRef:
                         key: zookeeper-metrics-config.yaml
-                        name: eventstreams-default-metrics-config
+                        name: es-default-metrics-config
                   storage:
                     type: ephemeral
               requestIbmServices:
