@@ -37,7 +37,9 @@ spec:
                 license: L-RJON-CJR2TC
                 use: CloudPakForIntegrationNonProduction
               adminApi: {}
-              adminUI: {}
+              adminUI:
+                authentication:
+                  - type: scram-sha-512
               apicurioRegistry: {}
               collector: {}
               restProducer: {}
@@ -88,5 +90,5 @@ spec:
                   storage:
                     type: ephemeral
               requestIbmServices:
-                iam: true
+                iam: false
                 monitoring: false
