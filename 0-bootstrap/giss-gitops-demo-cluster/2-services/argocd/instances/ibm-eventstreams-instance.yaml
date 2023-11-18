@@ -25,8 +25,8 @@ spec:
       values: |
         ibm-eventstreams-instance:
           ibmeventstreamsinstance:
-            name: es-default
             metadata:
+              name: es-default
               annotations:
                 eventstreams.ibm.com/apicurio-registry-version: ">=2.4"
             spec:
