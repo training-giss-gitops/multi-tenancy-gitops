@@ -26,6 +26,9 @@ spec:
         ibm-eventstreams-instance:
           ibmeventstreamsinstance:
             name: es-default
+            metadata:
+              annotations:
+                eventstreams.ibm.com/apicurio-registry-version: ">=2.4"
             spec:
               version: latest
               license:
