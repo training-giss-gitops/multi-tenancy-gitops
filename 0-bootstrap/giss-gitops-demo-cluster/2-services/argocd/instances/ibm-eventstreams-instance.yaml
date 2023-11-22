@@ -64,9 +64,9 @@ spec:
                     default.replication.factor: 1
                   listeners:
                     - name: plain
-                     port: 9092
-                     type: internal
-                     tls: false
+                      port: 9092
+                      type: internal
+                      tls: false
                     # - name: external
                     #   port: 9094
                     #   type: route
