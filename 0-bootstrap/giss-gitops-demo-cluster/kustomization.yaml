@@ -63,6 +63,9 @@ patches:
     - op: add
       path: /spec/sourceRepos/-
       value: https://jesusmah.github.io/helm-chart-repo
+    - op: add
+      path: /spec/sourceRepos/-
+      value: https://github.com/giss-gitops/produccion-y-sistemas.git
 - target:
     group: argoproj.io
     kind: Application
