@@ -9,7 +9,7 @@ patches:
   patch: |-
     - op: add
       path: /spec/source/repoURL
-      value: https://github.com/giss-gitops/multi-tenancy-gitops-apps.git
+      value: https://github.com/training-giss-gitops/multi-tenancy-gitops-apps.git
     - op: add
       path: /spec/source/targetRevision
       value: master

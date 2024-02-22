@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: 0-bootstrap/giss-gitops-demo-cluster
-    repoURL: https://github.com/giss-gitops/multi-tenancy-gitops.git
+    repoURL: https://github.com/training-giss-gitops/multi-tenancy-gitops.git
     targetRevision: master
   syncPolicy:
     automated:
